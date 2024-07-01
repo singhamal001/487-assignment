@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graza</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        @font-face {
+            font-family: 'GT Alpina Serif';
+            src: url('fonts/GTAlpinaTrial-Light.woff2') format('woff2'),
+                 url('fonts/GTAlpinaTrial-Light.woff') format('woff');
+            font-weight: light;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'EB Garamond', 'GT Alpina Serif', serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body class="bg-[#F3E6D9] text-[#1A1818] h-screen">
+    <header class="flex justify-between items-center py-4 px-6 border-b border-gray-300">
+        <div class="text-4xl font-bold">GRAZA</div>
+        <!-- <nav>
+            <ul class="flex space-x-8">
+                <li><a href="#" class="hover:underline">Shop</a></li>
+                <li><a href="#" class="hover:underline">Get Refills</a></li>
+                <li><a href="#" class="hover:underline">About</a></li>
+                <li><a href="#" class="hover:underline">Blog</a></li>
+            </ul>
+        </nav> -->
+        <!-- <div class="flex items-center space-x-4">
+            <a href="#" class="hover:underline">Cart [0]</a>
+        </div> -->
+    </header>
+
+    <main class="flex flex-col md:flex-row lg:flex-row h-auto md:h-[calc(100vh-64px)] lg:h-[calc(100vh-64px)]">
+        <div class="main-image-container flex flex-col items-center justify-center md:w-1/2 lg:w-1/2 w-full h-auto md:h-full lg:h-full">
+            <div class="h-auto md:h-full lg:h-full w-full bg-cover bg-center" id="main-image">
+                <!-- Swiper -->
+                <div class="swiper-container main-image-container h-auto md:h-full lg:h-full w-full bg-cover bg-center" id="main-image">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/main-product.webp" alt="main-product"></div>
+                        <div class="swiper-slide"><img src="images/thumb1.webp" alt="thumb1"></div>
+                        <div class="swiper-slide"><img src="images/thumb2.webp" alt="thumb2"></div>
+                        <div class="swiper-slide"><img src="images/thumb3.webp" alt="thumb3"></div>
+                        <div class="swiper-slide"><img src="images/thumb4.webp" alt="thumb4"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="thumbnail-container absolute left-4 bottom-4 md:block lg:block hidden">
+                    <img src="images/main-product.webp" alt="main-image" onclick="changeMainImage(0)" class="mb-2 w-12 h-12 rounded-full">
+                    <img src="images/thumb1.webp" alt="Thumb 1" onclick="changeMainImage(1)" class="mb-2 w-12 h-12 rounded-full">
+                    <img src="images/thumb2.webp" alt="Thumb 2" onclick="changeMainImage(2)" class="mb-2 w-12 h-12 rounded-full">
+                    <img src="images/thumb3.webp" alt="Thumb 3" onclick="changeMainImage(3)" class="mb-2 w-12 h-12 rounded-full">
+                    <img src="images/thumb4.webp" alt="Thumb 4" onclick="changeMainImage(4)" class="mb-2 w-12 h-12 rounded-full">
+                </div>    
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/2 h-auto md:h-full lg:h-full overflow-y-scroll p-4 text-base">
+            <div class="text-center">
+                <h1 class="text-5xl mb-4">"The Duo"<br><u>Drizzle & Sizzle Set</u></h1>
+                <p class="mb-4 font-bold"><span class="text-black-500">★★★★★</span> 2061 Reviews</p>
+            </div>
+            <div class="border p-4 rounded-lg mb-4 bg-white shadow-lg mx-auto rounded-lg quantity-container">
+                <h2 class="text-xl font-bold">Quantity</h2>
+                <fieldset>
+                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 mt-8">
+                        <div class="w-full">
+                            <div class="grid grid-cols-1 divide-y">
+                                <label for="1 Set" class="quantity-btn" data-quantity="1" data-info="+10% Off">
+                                    <div class="quantity-info">+10% Off</div>
+                                    <div class="quantity-text">1<br>Set</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="grid grid-cols-1 divide-y">
+                                <label for="2 Sets" class="quantity-btn" data-quantity="2" data-info="Free Shipping! +14% Off">
+                                    <div class="quantity-info">Free Shipping!<br>+14% Off</div>
+                                    <div class="quantity-text">2<br>Sets</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="grid grid-cols-1 divide-y">
+                                <label for="3 Sets" class="quantity-btn" data-quantity="3" data-info="Free Shipping! +15% Off">
+                                    <div class="quantity-info">Free Shipping!<br>+15% Off</div>
+                                    <div class="quantity-text">3<br>Sets</div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="grid grid-cols-1 divide-y">
+                                <label for="6 Sets" class="quantity-btn" data-quantity="6" data-info="Free Shipping! +17% Off">
+                                    <div class="quantity-info">Free Shipping!<br>+17% Off</div>
+                                    <div class="quantity-text">6<br>Sets</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr style="border-top: dashed 1px;" />
+                <div class="mb-4 mt-2">
+                    <label class="radio-container">
+                        <p>
+                        <input type="radio" name="purchaseType" value="oneTime">
+                            <span class="float: left radio-label">One Time Purchase </span>
+                            <span class="float: right radio-label">$37</span>
+                        </p>
+                    </label>
+                </div>
+                <hr style="border-top: dashed 1px;" />
+                <div class="mb-4 mt-2">
+                    <label class="radio-container">
+                        <input type="radio" name="purchaseType" value="subscribe" checked>
+                        <span class="radio-label">Subscribe & Save 
+                        <span><strike>$37.00 </strike> </span>
+                        <span">$33.30</span>
+                    </span>
+                    </label>
+                </div>
+                <div class="custom-dropdown mb-4">
+                    <div class="dropdown-selected" id="dropdown-selected">
+                        Frequency: Every 1 Month
+                    </div>
+                    <ul class="dropdown-options hidden" id="dropdown-options">
+                        <li class="dropdown-option">Every 1 Month</li>
+                        <li class="dropdown-option">Every 2 Months</li>
+                        <li class="dropdown-option">Every 3 Months</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-xl mb-2">Select Refill Preference:</h2>
+                    <div class="flex space-x-4 mb-4">
+                        <div class="flex items-center border rounded-lg p-2 bg-green-100">
+                            <img src="images/refill1.avif" alt="Refill 1" class="w-12 h-auto mr-2">
+                            <div>
+                                <span class="block font-bold">Refill Cans</span>
+                                <span>$33.30 / order</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center border rounded-lg p-2 bg-gray-100">
+                            <img src="images/refill2.avif" alt="Refill 2" class="w-12 h-auto mr-2">
+                            <div>
+                                <span class="block font-bold">Squeeze Bottles</span>
+                                <span>$33.30 / order</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p><strong>FIRST ORDER:</strong> 1 Sizzle Bottle, 1 Drizzle Bottle</p>
+                    <p><strong>RECURRING:</strong> 1 Sizzle Can, 1 Drizzle Can</p>
+                </div>
+                <div class="mb-4">
+                    <p id="order-details"><strong>Selected:</strong> 1 Sizzle Bottle, 1 Drizzle Bottle</p>
+                </div>
+                <button class="w-full text-black font-bold py-3 rounded-full payment">Subscribe - $33.30</button>
+                <p class="text-center mt-2">Skip, Edit or Cancel Anytime</p>
+            </div>
+            <!-- New components -->
+            <div class="flex flex-col items-center mt-8 w-full">
+                <div class="gift-box">
+                    <img src="images/graza-gift-icon.webp" alt="Gift Icon" class="w-12 h-12 mr-4">
+                    <p>Buying multiple gifts? Send to multiple addresses <a href="" target="_blank" style="text-decoration: underline;">here</a>.</p>
+                </div>
+                <div class="w-full mt-4">
+                    <div class="tabs flex justify-around w-full">
+                        <div class="tab active" data-target="#details">DETAILS</div>
+                        <div class="tab" data-target="#harvest">HARVEST</div>
+                        <div class="tab" data-target="#uses">USES</div>
+                        <div class="tab" data-target="#refills">REFILLS</div>
+                    </div>
+                    <div class="tab-content active w-full text-base" id="details">
+                        <p><strong>Drizzle: 500ML</strong><br><br>Extra Virgin finishing oil made from olives that are picked early, when flavor is bold and antioxidants are highest. Made for eating, not heating.</p><br>
+                        <p><strong>Sizzle: 750ML</strong><br><br>Extra Virgin cooking oil made from mature, mid-season olives that yield a more mellow flavor. Use it every day, in every way.</p>
+                    </div>
+                    <div class="tab-content w-full text-base" id="harvest">
+                        <p><strong>DRIZZLE: </strong>Harvested in October, before the olives have ripened fully. Picked by hand because young olives need a firm yank to loosen up.</p>
+                        <p><strong><br>SIZZLE: </strong>Harvested in November and December, when the olives are more mature. They’re pretty laid back by this point, so it only takes a few shakes to get them off the branch.</p>
+                    </div>
+                    <div class="tab-content w-full text-base" id="uses">
+                        <p><strong>DRIZZLE: </strong>A little Drizzle goes a long way! Put it on your ice cream or popcorn, whip up a pesto or salad dressing, or drink it straight from a spoon (we won’t tell).</p>
+                        <p><strong><br>SIZZLE: </strong>If you would put it in or on top of an oven, use Sizzle. Chicken cutlets, sheet pan veggies, fried rice, or even chocolate chip cookies! You name it, Sizzle Sizzles it.</p>
+                    </div>
+                    <div class="tab-content w-full text-base" id="refills">
+                        <p><strong>“DRIZZLE” REFILL CAN: 500 ML <br></strong></p>
+                        <p><strong><br>“SIZZLE” REFILL CAN: 750 ML</strong></p>
+                        <p><br>Perfectly portioned and 100% recyclable, our “beer can” refills are designed to keep your delicious olive oil super fresh. Just crack open, pour into a squeeze bottle (using a kitchen funnel!) and get cookin'.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
