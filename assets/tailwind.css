@@ -10,10 +10,14 @@ body, html {
     height: 100%;
     overflow: hidden;
     background-color: #F6E6D9;
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 main {
     overflow-y: auto;
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 
@@ -25,6 +29,8 @@ main {
     background-size: cover;
     background-position: center;
     overflow-y: hidden; 
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 .thumbnail-container {
@@ -35,6 +41,8 @@ main {
     flex-direction: column;
     gap: 8px;
     z-index: 10;
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 .thumbnail-container img {
@@ -43,10 +51,14 @@ main {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid #3c422e;
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 .thumbnail-container img:hover {
     border-color: white;
+    font-family: 'GT Alpina Serif';
+    font-weight: light;
 }
 
 
