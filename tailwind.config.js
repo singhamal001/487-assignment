@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./index.html", "./styles/custom.css"],
+  content: ["./src/**/*.{html,js}", "./index.html", "./assets/styles.css"],
   theme: {
     extend: {
       maxWidth: {
