@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./index.html", "./assets/styles.css"],
+  content: ["./src/**/*.{html,js}", "./index.html", "./assets/styles.css","./layout/theme.liquid", "./sections/product-graza.liquid", "./templates/index.liquid", "./templates/product.liquid"],
   theme: {
     extend: {
       maxWidth: {
