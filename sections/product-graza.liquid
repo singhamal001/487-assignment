@@ -1,27 +1,31 @@
-<main class="flex flex-col md:flex-row h-auto md:h-[calc(100vh-64px)]">
+<div class="product-page">
     <div class="main-image-container flex flex-col items-center justify-center md:w-1/2 w-full h-auto md:h-full">
         <div class="h-auto md:h-full w-full bg-cover bg-center" id="main-image">
             <!-- Swiper -->
             <div class="swiper-container main-image-container h-auto md:h-full w-full bg-cover bg-center" id="main-image">
                 <div class="swiper-wrapper">
-                    {% for image in product.images %}
-                        <div class="swiper-slide"><img src="{{ image.src | img_url: '1024x1024' }}" alt="{{ image.alt }}"></div>
-                    {% endfor %}
+                    <div class="swiper-slide"><img src="{{ 'main-product.webp' | asset_url }}" alt="main-product"></div>
+                    <div class="swiper-slide"><img src="{{ 'thumb1.webp' | asset_url }}" alt="thumb1"></div>
+                    <div class="swiper-slide"><img src="{{ 'thumb2.webp' | asset_url }}" alt="thumb2"></div>
+                    <div class="swiper-slide"><img src="{{ 'thumb3.webp' | asset_url }}" alt="thumb3"></div>
+                    <div class="swiper-slide"><img src="{{ 'thumb4.webp' | asset_url }}" alt="thumb4"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
             <!-- Thumbnails -->
             <div class="thumbnail-container absolute left-4 bottom-4 md:block hidden">
-                {% for image in product.images %}
-                    <img src="{{ image.src | img_url: 'thumbnail' }}" alt="{{ image.alt }}" onclick="changeMainImage({{ forloop.index0 }})" class="mb-2 w-12 h-12 rounded-full">
-                {% endfor %}
+                <img src="{{ 'main-product.webp' | asset_url }}" alt="main-image" onclick="changeMainImage(0)" class="mb-2 w-12 h-12 rounded-full">
+                <img src="{{ 'thumb1.webp' | asset_url }}" alt="Thumb 1" onclick="changeMainImage(1)" class="mb-2 w-12 h-12 rounded-full">
+                <img src="{{ 'thumb2.webp' | asset_url }}" alt="Thumb 2" onclick="changeMainImage(2)" class="mb-2 w-12 h-12 rounded-full">
+                <img src="{{ 'thumb3.webp' | asset_url }}" alt="Thumb 3" onclick="changeMainImage(3)" class="mb-2 w-12 h-12 rounded-full">
+                <img src="{{ 'thumb4.webp' | asset_url }}" alt="Thumb 4" onclick="changeMainImage(4)" class="mb-2 w-12 h-12 rounded-full">
             </div>    
         </div>
     </div>
     <div class="w-full md:w-1/2 h-auto md:h-full overflow-y-scroll p-4 text-base">
         <div class="text-center">
-            <h1 class="text-5xl mb-4">{{ product.title }}</h1>
-            <p class="mb-4 font-bold"><span class="text-black-500">★★★★★</span> {{ product.reviews_count }} Reviews</p>
+            <h1 class="text-5xl mb-4">{{ section.settings.product_page_title }}<br><u>Drizzle & Sizzle Set</u></h1>
+            <p class="mb-4 font-bold"><span class="text-black-500">★★★★★</span> 2061 Reviews</p>
         </div>
         <div class="border p-4 rounded-lg mb-4 bg-white shadow-lg mx-auto rounded-lg quantity-container">
             <h2 class="text-xl font-bold">Quantity</h2>
@@ -153,4 +157,4 @@
             </div>
         </div>
     </div>
-</main>
+</div>
