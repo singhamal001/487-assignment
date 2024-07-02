@@ -1,7 +1,26 @@
 [
     {
       "name": "Theme settings",
-      "settings": []
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_page_title",
+          "label": "Product Page Title",
+          "default": "The Duo - Drizzle & Sizzle Set"
+        },
+        {
+          "type": "number",
+          "id": "default_quantity",
+          "label": "Default Quantity",
+          "default": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "subscribe_and_save",
+          "label": "Enable Subscribe and Save",
+          "default": true
+        }
+      ]
     }
   ]
   
