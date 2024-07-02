@@ -1,3 +1,11 @@
+const swiper = new Swiper('.swiper-container', {
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
+
 function changeMainImage(index) {
     const mainImage = document.querySelector('.swiper-container .swiper-wrapper');
     const images = mainImage.querySelectorAll('.swiper-slide img');
