@@ -1,0 +1,36 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    // Tab switching logic
+    document.querySelectorAll('.tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.tab').forEach(function(tab) {
+          tab.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-content').forEach(function(content) {
+          content.classList.remove('active');
+        });
+        tab.classList.add('active');
+        document.querySelector(tab.getAttribute('data-target')).classList.add('active');
+      });
+    });
+
+    // Dropdown logic
+    document.getElementById('dropdown-selected').addEventListener('click', function() {
+      document.getElementById('dropdown-options').classList.toggle('hidden');
+    });
+    document.querySelectorAll('.dropdown-option').forEach(function(option) {
+      option.addEventListener('click', function() {
+        document.getElementById('dropdown-selected').textContent = option.textContent;
+        document.getElementById('dropdown-options').classList.add('hidden');
+      });
+    });
+  });
+</script>
