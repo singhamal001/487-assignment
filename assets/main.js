@@ -1,4 +1,5 @@
 const swiper = new Swiper('.swiper-container', {
+    loop:true,
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -7,11 +8,21 @@ const swiper = new Swiper('.swiper-container', {
 
 
 function changeMainImage(index) {
-    const mainImage = document.querySelector('.swiper-container .swiper-wrapper');
-    const images = mainImage.querySelectorAll('.swiper-slide img');
-    const selectedImage = images[index].src;
-    document.querySelector('.swiper-container .swiper-slide img').src = selectedImage;
+    swiper.slideToLoop(index); // Slide to the corresponding slide
 }
+
+document.querySelectorAll('.thumbnail-container img').forEach((thumb, index) => {
+    thumb.addEventListener('click', function () {
+        changeMainImage(index);
+    });
+});
+
+// function changeMainImage(index) {
+//     const mainImage = document.querySelector('.swiper-container .swiper-wrapper');
+//     const images = mainImage.querySelectorAll('.swiper-slide img');
+//     const selectedImage = images[index].src;
+//     document.querySelector('.swiper-container .swiper-slide img').src = selectedImage;
+// }
 
 document.querySelectorAll('.quantity-btn').forEach(button => {
     button.addEventListener('click', function() {
